@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+*{  
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'roboto', sans-serif;
+}
+
+body{
+    background: linear-gradient(to right, rgb(4, 44, 56), rgb(0, 174, 255));
+    background-repeat: no-repeat;
+    font-weight: bold;
+}
+
+.grid-container{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+    margin: 0;
+    grid-template-columns: repeat(4,100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.grid-container button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid #111;
+    outline: none;
+    background-color: #111;
+    color: #eee;
+}
+
+.grid-container .operator{
+    background-color: #00A1EC;
+    border: none;
+}
+
+
+.span-two{
+    grid-column: span 2;
+}
+
+.grid-container > .output{
+    display: flex;
+    grid-column: 1 / -1;
+    background-color: #222;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .previos-operand{
+    color:rgba(255,255,255,0.75);
+    font-size: 1.5rem;
+}
+.output .current-operand{
+    color:rgba(255,255,255,0.75);
+    font-size: 2.5rem;
+
+}
+
+
+@media (max-width: 475px) {
+
+.grid-container{
+    grid-template-columns: repeat(4,60px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 60px);
+}
+.grid-container button {
+    font-size: 1rem;
+}
+.output .previos-operand{
+    color:rgba(255,255,255,0.75);
+    font-size: 1rem;
+}
+.output .current-operand{
+    color:rgba(255,255,255,0.75);
+    font-size: 1.5rem;
+
+}
+
+}
